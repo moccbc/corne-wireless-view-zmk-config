@@ -49,10 +49,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&language  &kp Q  &kp W  &kp E      &kp R    &kp T            &kp Y      &kp U      &kp I    &kp O     &kp P  &kp INT_KATAKANAHIRAGANA
-&kp LCTRL  &kp A  &kp S  &kp D      &kp F    &kp G            &kp H      &kp J      &kp K    &kp L  &kp SEMI                   &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C      &kp V    &kp B            &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH           &kp RIGHT_SHIFT
-                         &mo 2  &kp ENTER  &kp TAB    &kp BACKSPACE  &kp SPACE      &mo 1
+&kp ESCAPE  &kp Q  &kp W  &kp E      &kp R    &kp T            &kp Y      &kp U      &kp I    &kp O     &kp P        &language
+ &kp LCTRL  &kp A  &kp S  &kp D      &kp F    &kp G            &kp H      &kp J      &kp K    &kp L  &kp SEMI          &kp SQT
+ &kp LSHFT  &kp Z  &kp X  &kp C      &kp V    &kp B            &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                          &mo 2  &kp ENTER  &kp TAB    &kp BACKSPACE  &kp SPACE      &mo 1
             >;
         };
 
@@ -64,7 +64,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp N1  &kp NUMBER_2  &kp N3     &kp N4   &kp N5     &kp NUMBER_6     &kp N7            &kp N8             &kp N9    &kp N0     &trans
+    &trans  &kp N1  &kp NUMBER_2  &kp N3     &kp N4   &kp N5     &kp NUMBER_6     &kp N7            &kp N8             &kp N9    &kp N0     &trans
     &trans  &trans        &trans  &trans     &trans   &trans        &kp MINUS  &kp EQUAL          &kp LBRC           &kp RBRC  &kp BSLH  &kp GRAVE
 &kp LSHIFT  &trans        &trans  &trans     &trans   &trans        &kp UNDER   &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE  &kp TILDE
                                    &mo 0  &kp ENTER  &kp TAB    &kp BACKSPACE  &kp SPACE             &mo 2
