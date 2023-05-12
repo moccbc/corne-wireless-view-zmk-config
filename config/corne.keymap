@@ -15,8 +15,12 @@
             label = "TERMINAL";
             #binding-cells = <0>;
             bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp LCTRL &kp LEFT_ALT &kp T>;
+                <&kp T>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_ALT>;
         };
         dashboard: dashboard {
             compatible = "zmk,behavior-macro";
