@@ -31,8 +31,13 @@
             label = "LANGUAGE";
             #binding-cells = <0>;
             bindings =
+                <&macro_press>,
+                <&kp LGUI>,
                 <&macro_tap>,
-                <&kp LGUI &kp SPACE>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_wait_time 100>,
                 <&macro_tap>,
                 <&kp INT_KATAKANAHIRAGANA>;
         };
