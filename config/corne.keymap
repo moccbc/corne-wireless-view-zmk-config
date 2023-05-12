@@ -29,7 +29,7 @@
             bindings =
                 <&macro_press>,
                 <&kp LGUI>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp A>,
                 <&macro_release>,
                 <&kp LGUI>;
