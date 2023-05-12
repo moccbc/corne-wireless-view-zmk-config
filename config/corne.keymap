@@ -27,8 +27,12 @@
             label = "DASHBOARD";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LGUI &kp A>;
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LGUI>;
         };
         language: language {
             compatible = "zmk,behavior-macro";
