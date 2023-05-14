@@ -49,6 +49,60 @@
                 <&macro_tap>,
                 <&kp INT_KATAKANAHIRAGANA>;
         };
+        tmux_prefix: tmux_prefix {
+            compatible = "zmk,behavior-macro";
+            label = "TMUX_PREFIX";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp A>;
+        };
+        tmux_split_v1: tmux_split_v1 {
+            compatible = "zmk,behavior-macro";
+            label = "TMUX_SPLIT_V1";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&tmux_prefix>,
+                <&macro_tap>,
+                <&kp MINUS>,
+                <&macro_release>,
+                <&tmux_prefix>;
+        };
+        tmux_split_v2: tmux_split_v2 {
+            compatible = "zmk,behavior-macro";
+            label = "TMUX_SPLIT_V2";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&tmux_prefix>,
+                <&macro_tap>,
+                <&kp UNDERSCORE>,
+                <&macro_release>,
+                <&tmux_prefix>;
+        };
+        tmux_split_h1: tmux_split_h1 {
+            compatible = "zmk,behavior-macro";
+            label = "TMUX_SPLIT_H1";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&tmux_prefix>,
+                <&macro_tap>,
+                <&kp PIPE>,
+                <&macro_release>,
+                <&tmux_prefix>;
+        };
+        tmux_split_h2: tmux_split_h2 {
+            compatible = "zmk,behavior-macro";
+            label = "TMUX_SPLIT_H2";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&tmux_prefix>,
+                <&macro_tap>,
+                <&kp BACKSLASH>,
+                <&macro_release>,
+                <&tmux_prefix>;
+        };
     };
 
     keymap {
@@ -78,7 +132,7 @@
 
             bindings = <
 &trans         &kp EXCL           &kp AT         &kp HASH       &kp DOLLAR      &kp PERCENT    &kp CARET  &kp AMPERSAND   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &trans
- &none  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5    &kp MINUS      &kp EQUAL  &kp BACKSLASH              &kp LBRC               &kp RBRC  &kp GRAVE
+&trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5    &kp MINUS      &kp EQUAL  &kp BACKSLASH              &kp LBRC               &kp RBRC  &kp GRAVE
  &none  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0    &kp UNDER       &kp PLUS       &kp PIPE      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp TILDE
                                                    &trans           &trans           &trans       &trans         &trans         &trans
             >;
@@ -92,10 +146,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &none    &kp UP  &terminal       &none     &none   &none      &none  &kp PRINTSCREEN              &none
-     &none    &dashboard         &none  &kp LEFT  &kp DOWN  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT            &none    &kp C_VOLUME_UP
-     &none         &none         &none     &none     &none      &none       &none     &none   &none      &none            &none  &kp C_VOLUME_DOWN
-                                          &trans    &trans     &trans      &trans    &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1           &none          &kp UP       &terminal       &none     &none   &none      &none  &kp PRINTSCREEN              &none
+     &none    &dashboard           &none        &kp LEFT        &kp DOWN       &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT            &none    &kp C_VOLUME_UP
+     &none         &none  &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2       &none     &none   &none      &none            &none  &kp C_VOLUME_DOWN
+                                                  &trans          &trans          &trans      &trans    &trans  &trans
             >;
         };
     };
