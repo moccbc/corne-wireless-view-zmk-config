@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     macros {
@@ -200,9 +200,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1           &none          &kp UP       &terminal               &trans              &none            &none               &none  &kp PRINTSCREEN              &none
+&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1           &none          &kp UP       &terminal               &trans            &kp F11          &kp F12         &kp C_PAUSE  &kp PRINTSCREEN              &none
      &none    &dashboard           &none        &kp LEFT        &kp DOWN       &kp RIGHT             &kp LEFT           &kp DOWN           &kp UP           &kp RIGHT            &none    &kp C_VOLUME_UP
-     &none        &trans  &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2    &tmux_resize_left  &tmux_resize_down  &tmux_resize_up  &tmux_resize_right            &none  &kp C_VOLUME_DOWN
+     &none         &none  &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2    &tmux_resize_left  &tmux_resize_down  &tmux_resize_up  &tmux_resize_right            &none  &kp C_VOLUME_DOWN
                                                   &trans          &trans          &trans               &trans             &trans           &trans
             >;
         };
