@@ -186,7 +186,7 @@
         compatible = "zmk,combos";
 
         switch_normal_mac {
-            bindings = <&tog 3>;
+            bindings = <&tog 1>;
             key-positions = <38 39 37 40 41 36>;
         };
     };
@@ -205,7 +205,16 @@
 &kp TAB    &kp Q  &kp W  &kp E       &kp R      &kp T    &kp Y  &kp U      &kp I      &kp O    &kp P     &kp BACKSPACE
 &kp LCTRL  &kp A  &kp S  &kp D       &kp F      &kp G    &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C       &kp V      &kp B    &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                         &kp ESCAPE  &kp ENTER  &mo 2    &mo 1  &kp SPACE  &language
+                         &kp ESCAPE  &kp ENTER  &mo 3    &mo 2  &kp SPACE  &language
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&kp TAB           &kp Q  &kp W  &kp E    &kp R      &kp T    &kp Y  &kp U      &kp I          &kp O    &kp P     &kp BACKSPACE
+&kp LEFT_COMMAND  &kp A  &kp S  &kp D    &kp F      &kp G    &kp H  &kp J      &kp K          &kp L    &kp SEMI  &kp APOS
+&kp LSHFT         &kp Z  &kp X  &kp C    &kp V      &kp B    &kp N  &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
+                                &kp ESC  &kp ENTER  &mo 3    &mo 2  &kp SPACE  &mac_language
             >;
         };
 
@@ -234,17 +243,8 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &none           &kp UP          &terminal         &trans             &kp F11            &kp F12          &kp C_PAUSE         &kp PRINTSCREEN  &none
 &alt_tab    &dashboard    &none           &kp LEFT        &kp DOWN        &kp RIGHT         &kp LEFT           &kp DOWN           &kp UP           &kp RIGHT           &none            &kp C_VOLUME_UP
-&tog 3      &none         &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2    &tmux_resize_left  &tmux_resize_down  &tmux_resize_up  &tmux_resize_right  &none            &kp C_VOLUME_DOWN
+&none       &none         &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2    &tmux_resize_left  &tmux_resize_down  &tmux_resize_up  &tmux_resize_right  &none            &kp C_VOLUME_DOWN
                                           &trans          &trans          &trans            &trans             &trans             &trans
-            >;
-        };
-
-        layer_3 {
-            bindings = <
-&kp TAB           &kp Q  &kp W  &kp E    &kp R      &kp T    &kp Y  &kp U      &kp I          &kp O    &kp P     &kp BACKSPACE
-&kp LEFT_COMMAND  &kp A  &kp S  &kp D    &kp F      &kp G    &kp H  &kp J      &kp K          &kp L    &kp SEMI  &kp APOS
-&kp LSHFT         &kp Z  &kp X  &kp C    &kp V      &kp B    &kp N  &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp ESC  &kp ENTER  &mo 2    &mo 1  &kp SPACE  &mac_language
             >;
         };
     };
