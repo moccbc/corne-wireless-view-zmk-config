@@ -178,7 +178,8 @@
                 <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp SPACE>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
         };
     };
 
@@ -187,7 +188,7 @@
 
         switch_normal_mac {
             bindings = <&tog 1>;
-            key-positions = <38 39 37 40 41 36>;
+            key-positions = <24 35>;
         };
     };
 
