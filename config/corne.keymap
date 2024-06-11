@@ -10,19 +10,6 @@
 
 / {
     macros {
-        terminal: terminal {
-            compatible = "zmk,behavior-macro";
-            label = "TERMINAL";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp T>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL &kp LEFT_ALT>;
-        };
-
         dashboard: dashboard {
             compatible = "zmk,behavior-macro";
             label = "DASHBOARD";
@@ -50,111 +37,6 @@
                 <&macro_wait_time 100>,
                 <&macro_tap>,
                 <&kp INT_KATAKANAHIRAGANA>;
-        };
-
-        tmux_prefix: tmux_prefix {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_PREFIX";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        tmux_split_v1: tmux_split_v1 {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_SPLIT_V1";
-            #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&macro_tap>, <&kp MINUS>;
-        };
-
-        tmux_split_v2: tmux_split_v2 {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_SPLIT_V2";
-            #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&macro_tap>, <&kp UNDERSCORE>;
-        };
-
-        tmux_split_h1: tmux_split_h1 {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_SPLIT_H1";
-            #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&macro_tap>, <&kp PIPE>;
-        };
-
-        tmux_split_h2: tmux_split_h2 {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_SPLIT_H2";
-            #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&macro_tap>, <&kp BACKSLASH>;
-        };
-
-        tmux_resize_up: tmux_resize_up {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_RESIZE_UP";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_wait_time 10>,
-                <&macro_press>,
-                <&kp A>,
-                <&macro_tap>,
-                <&kp UP>,
-                <&macro_release>,
-                <&kp LCTRL &kp A>;
-        };
-
-        tmux_resize_right: tmux_resize_right {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_RESIZE_RIGHT";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_wait_time 10>,
-                <&macro_press>,
-                <&kp A>,
-                <&macro_tap>,
-                <&kp RIGHT>,
-                <&macro_release>,
-                <&kp LCTRL &kp A>;
-        };
-
-        tmux_resize_down: tmux_resize_down {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_RESIZE_DOWN";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_wait_time 10>,
-                <&macro_press>,
-                <&kp A>,
-                <&macro_tap>,
-                <&kp DOWN>,
-                <&macro_release>,
-                <&kp LCTRL &kp A>;
-        };
-
-        tmux_resize_left: tmux_resize_left {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_RESIZE_LEFT";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_wait_time 10>,
-                <&macro_press>,
-                <&kp A>,
-                <&macro_tap>,
-                <&kp LEFT>,
-                <&macro_release>,
-                <&kp LCTRL &kp A>;
         };
 
         alt_tab: alt_tab {
@@ -191,10 +73,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E       &kp R      &kp T    &kp Y  &kp U      &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp LCTRL  &kp A  &kp S  &kp D       &kp F      &kp G    &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C       &kp V      &kp B    &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                         &kp ESCAPE  &kp ENTER  &mo 3    &mo 2  &kp SPACE  &language
+&kp TAB           &kp Q  &kp W  &kp E       &kp R      &kp T    &kp Y  &kp U      &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp LEFT_COMMAND  &kp A  &kp S  &kp D       &kp F      &kp G    &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT         &kp Z  &kp X  &kp C       &kp V      &kp B    &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                &kp ESCAPE  &kp ENTER  &mo 3    &mo 2  &kp SPACE  &language
             >;
         };
 
@@ -217,7 +99,7 @@
             bindings = <
 &trans  &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET  &kp AMPERSAND  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp MINUS  &kp EQUAL      &kp BACKSLASH  &kp LBRC              &kp RBRC               &kp GRAVE
-&none   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp UNDER  &kp PLUS       &kp PIPE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE
+&trans  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp UNDER  &kp PLUS       &kp PIPE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE
                                     &trans        &trans        &trans          &trans     &trans         &trans
             >;
         };
@@ -230,10 +112,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&alt_tab          &none       &none           &none           &kp UP          &terminal         &trans             &kp F11            &kp F12          &kp C_PAUSE         &kp PRINTSCREEN  &none
-&trans            &dashboard  &none           &kp LEFT        &kp DOWN        &kp RIGHT         &kp LEFT           &kp DOWN           &kp UP           &kp RIGHT           &none            &kp C_VOLUME_UP
-&kp LEFT_COMMAND  &none       &tmux_split_h1  &tmux_split_h2  &tmux_split_v1  &tmux_split_v2    &tmux_resize_left  &tmux_resize_down  &tmux_resize_up  &tmux_resize_right  &none            &kp C_VOLUME_DOWN
-                                              &trans          &trans          &trans            &trans             &trans             &trans
+&alt_tab  &trans  &trans  &trans    &kp UP    &trans       &trans    &trans    &trans  &trans     &trans  &trans
+&trans    &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp C_VOLUME_UP
+&trans    &trans  &trans  &trans    &trans    &trans       &trans    &trans    &trans  &trans     &trans  &kp C_VOLUME_DOWN
+                          &trans    &trans    &trans       &trans    &trans    &trans
             >;
         };
     };
