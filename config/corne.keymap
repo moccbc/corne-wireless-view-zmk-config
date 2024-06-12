@@ -56,7 +56,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LEFT_COMMAND &kp LSHIFT>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>,
                 <&macro_wait_time 5>,
                 <&kp NUMBER_4>;
 
@@ -179,10 +179,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&alt_tab  &trans  &trans  &trans    &ctrl_up    &trans         &trans    &trans      &trans    &trans       &screenshot  &trans
-&trans    &trans  &trans  &ctrl_up  &ctrl_down  &ctrl_right    &kp LEFT  &kp DOWN    &kp UP    &kp RIGHT    &trans       &kp C_VOLUME_UP
-&trans    &trans  &trans  &trans    &trans      &trans         &ctrl_up  &ctrl_down  &ctrl_up  &ctrl_right  &trans       &kp C_VOLUME_DOWN
-                          &trans    &trans      &trans         &trans    &trans      &trans
+&alt_tab  &trans  &trans  &trans      &ctrl_up    &trans         &trans      &trans      &trans    &trans       &screenshot  &trans
+&trans    &trans  &trans  &ctrl_left  &ctrl_down  &ctrl_right    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT    &trans       &kp C_VOLUME_UP
+&trans    &trans  &trans  &trans      &trans      &trans         &ctrl_left  &ctrl_down  &ctrl_up  &ctrl_right  &trans       &kp C_VOLUME_DOWN
+                          &trans      &trans      &trans         &trans      &trans      &trans
             >;
         };
     };
