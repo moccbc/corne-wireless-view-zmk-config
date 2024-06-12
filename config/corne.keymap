@@ -51,6 +51,34 @@
                 <&macro_release>,
                 <&kp LALT>;
         };
+
+        ctrl_left: ctrl_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT>;
+            label = "CTRL_LEFT";
+        };
+
+        ctrl_right: ctrl_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp RIGHT>;
+            label = "CTRL_RIGHT";
+        };
+
+        ctrl_up: ctrl_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp UP_ARROW>;
+            label = "CTRL_UP";
+        };
+
+        ctrl_down: ctrl_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp DOWN_ARROW>;
+            label = "CTRL_DOWN";
+        };
     };
 
     combos {
@@ -112,10 +140,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&alt_tab  &trans  &trans  &trans    &kp UP    &trans       &trans    &trans    &trans  &trans     &trans  &trans
-&trans    &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp C_VOLUME_UP
-&trans    &trans  &trans  &trans    &trans    &trans       &trans    &trans    &trans  &trans     &trans  &kp C_VOLUME_DOWN
-                          &trans    &trans    &trans       &trans    &trans    &trans
+&alt_tab  &trans  &trans  &trans    &kp UP    &trans       &trans      &trans      &trans    &trans       &trans  &trans
+&trans    &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT    &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT    &trans  &kp C_VOLUME_UP
+&trans    &trans  &trans  &trans    &trans    &trans       &ctrl_left  &ctrl_down  &ctrl_up  &ctrl_right  &trans  &kp C_VOLUME_DOWN
+                          &trans    &trans    &trans       &trans      &trans      &trans
             >;
         };
     };
