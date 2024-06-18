@@ -265,7 +265,7 @@
             bindings = <
 &alt_tab  &trans  &trans  &trans      &ctrl_up    &trans         &trans    &trans    &trans   &trans     &screenshot  &trans
 &trans    &trans  &trans  &ctrl_left  &ctrl_down  &ctrl_right    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans       &kp C_VOLUME_UP
-&trans    &trans  &trans  &trans      &trans      &trans         &ctrl_h   &ctrl_j   &ctrl_k  &ctrl_l    &trans       &kp C_VOLUME_DOWN
+&trans    &trans  &trans  &ctrl_c     &ctrl_v     &trans         &ctrl_h   &ctrl_j   &ctrl_k  &ctrl_l    &trans       &kp C_VOLUME_DOWN
                           &trans      &trans      &trans         &trans    &trans    &trans
             >;
         };
