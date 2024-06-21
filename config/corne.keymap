@@ -216,6 +216,34 @@
 
             label = "CTRL_D";
         };
+
+        option_right: option_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "OPTION_RIGHT";
+        };
+
+        option_left: option_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "OPTION_LEFT";
+        };
     };
 
     combos {
@@ -277,10 +305,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&alt_tab  &trans  &trans  &trans      &ctrl_up    &trans         &trans    &trans    &trans   &trans     &screenshot  &trans
-&trans    &trans  &trans  &ctrl_left  &ctrl_down  &ctrl_right    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans       &kp C_VOLUME_UP
-&trans    &trans  &trans  &ctrl_c     &ctrl_v     &ctrl_d        &ctrl_h   &ctrl_j   &ctrl_k  &ctrl_l    &trans       &kp C_VOLUME_DOWN
-                          &trans      &trans      &trans         &trans    &trans    &trans
+&alt_tab  &trans  &trans  &trans      &ctrl_up    &trans         &option_left  &trans    &trans   &option_right  &screenshot  &trans
+&trans    &trans  &trans  &ctrl_left  &ctrl_down  &ctrl_right    &kp LEFT      &kp DOWN  &kp UP   &kp RIGHT      &trans       &kp C_VOLUME_UP
+&trans    &trans  &trans  &ctrl_c     &ctrl_v     &ctrl_d        &ctrl_h       &ctrl_j   &ctrl_k  &ctrl_l        &trans       &kp C_VOLUME_DOWN
+                          &trans      &trans      &trans         &trans        &trans    &trans
             >;
         };
     };
