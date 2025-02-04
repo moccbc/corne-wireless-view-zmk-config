@@ -244,6 +244,14 @@
 
             label = "OPTION_LEFT";
         };
+
+        option_enter: option_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LA(ENTER)>;
+
+            label = "OPTION_ENTER";
+        };
     };
 
     combos {
@@ -252,6 +260,11 @@
         switch_normal_bt {
             bindings = <&tog 1>;
             key-positions = <24 35>;
+        };
+
+        option_enter {
+            bindings = <&option_enter>;
+            key-positions = <24 37>;
         };
     };
 
